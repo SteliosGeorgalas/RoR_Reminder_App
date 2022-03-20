@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @reminder_list.id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @reminder_list.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reminder_list.date %>
+</p>
+
+<p>
+  <strong>Isdone:</strong>
+  <%= @reminder_list.isDone %>
+</p>
+
+<p>
+  <strong>Isoverdue:</strong>
+  <%= @reminder_list.isOverDue %>
+</p>
+
+<%= link_to 'Edit', edit_reminder_list_path(@reminder_list) %> |
+<%= link_to 'Back', reminder_lists_path %>

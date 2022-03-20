@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  description: MyString
+  date: 2022-03-20 20:00:37
+  isDone: false
+  isOverDue: false
+
+two:
+  id: 1
+  description: MyString
+  date: 2022-03-20 20:00:37
+  isDone: false
+  isOverDue: false

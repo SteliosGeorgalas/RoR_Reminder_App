@@ -1,0 +1,2 @@
+class ReminderList < ApplicationRecord
+end
