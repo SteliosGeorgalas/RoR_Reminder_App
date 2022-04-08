@@ -1,0 +1,18 @@
+<div class="calendar-container bg-dark text-white">
+  <div class="calendar-header">
+    <div class="h1">
+      <%= link_to calendar_path(date: @date - 1.month), class: "btn btn-default" do %>
+        <i class="bi bi-arrow-left-square-fill"></i>
+      <% end %>
+      <%= "#{@date.strftime("%B")} #{@date.year}" %>
+      <%= link_to calendar_path(date: @date + 1.month), class: "btn btn-default" do %>
+        <i class="bi bi-arrow-right-square-fill"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="calendar">
+    <%= calendar @date do |date| %>
+      <%= date.day %>
+    <% end %>
+  </div>
+</div>
