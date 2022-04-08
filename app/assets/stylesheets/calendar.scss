@@ -22,7 +22,7 @@
   &-header {
     text-align: center;
     padding: 20px 0;
-    background: linear-gradient(to bottom, rgb(250, 251, 253) 0%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, #000,rgba(255,255,255,0) 100%);
     border-bottom: 1px solid rgba(166, 168, 179, 0.12);
     
     p {
@@ -31,7 +31,7 @@
       font-weight: 600;
       color: rgba(#51565d, .4);
     }
-    
+
     button {
       background: 0;
       border: 0;
@@ -41,6 +41,10 @@
       outline: 0;
     }
   }
+}
+
+.calendar div { 
+    border: 1px solid palevioletred;
 }
 
 .day {
