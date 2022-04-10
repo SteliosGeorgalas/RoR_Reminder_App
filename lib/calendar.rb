@@ -12,26 +12,32 @@ class Calendar < Struct.new(:view, :date, :callback)
 
     def header
       content_tag :th do
-        HEADER.map { |day| content_tag :div, day}.join.html_safe
+        HEADER.map { |day| content_tag :p, day}.join.html_safe
       end
     end
 
     def week_rows
       weeks.map do |week|
         content_tag :td do
-          week.map { |day| content_tag :div, day_cell(day) }.join.html_safe
+          week.map { |day| day_cell(day) }.join.html_safe
         end
       end.join.html_safe
     end
 
     def day_cell(day)
-      content_tag :td, view.capture(day, &callback), class: day_classes(day)
+        content_tag(:div, view.capture(day, &callback) + content_tag(:i, "add", class:"icon-small-text material-icons md-18 "), class: day_classes(day))
     end
 
+    # def new_event
+    #   content_tag :p do
+    #     HEADER.map { |day| content_tag :p, day}.join.html_safe
+    #   end
+    # end
+
     def day_classes(day)
-      classes = []
-      classes << "today" if day == Date.today
-      classes << "not-month" if day.month != date.month
+      classes = ["day"]
+      classes << "day-name" if day == Date.today
+      classes << "day--disabled" if day.month != date.month
       classes.empty? ? nil : classes.join(" ")
     end
 
